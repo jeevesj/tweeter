@@ -1,13 +1,3 @@
-/* article.tweets {
-  padding-top: 25px;
-  width: 60%;
-  height: 200px;
-  background-color: aliceblue;
-  border: 2px solid #545149;
-  margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
-} */
 
 .tweets {
   width: 60%;
@@ -22,6 +12,11 @@
   width: 100%;
   border: 2px solid #545149;
 }
+
+.tweets__article:hover {
+  box-shadow: 0.5em 0.5em;
+}
+
 
 .tweets__line {
   height: 2px;
