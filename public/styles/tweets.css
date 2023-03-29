@@ -10,7 +10,7 @@
 } */
 
 .tweets {
-  width: 100%;
+  width: 60%;
 }
 
 .tweets__article {
@@ -18,22 +18,22 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: 15px;
   width: 100%;
-  border: 1px solid black;
+  border: 2px solid #545149;
 }
 
 .tweets__line {
   height: 2px;
   width: 100%;
-  background-color: black;
+  background-color: #545149;
 }
 
 .tweets__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 98%;
 }
 
 .tweets__img__name {
@@ -52,6 +52,11 @@
 .tweets__footer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  align-items: baseline;
+  padding-top: 6px;
+  width: 98%;
+}
+
+.share__emojis {
+ color: #4056A1;
 }
