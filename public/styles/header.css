@@ -1,0 +1,10 @@
+header {
+  width: 100vw;
+  height: 520px;
+  padding-top: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e6ddc4;
+  background-image: url("https://www.transparenttextures.com/patterns/cutcube.png");
+}

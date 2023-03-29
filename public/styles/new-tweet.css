@@ -1,0 +1,27 @@
+
+section {
+  width: 60%;
+  align-items: center;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+  font-weight: bold;
+  box-sizing: border-box;
+  background-color: #f4f1ec;
+  border: none;
+  border-bottom: 2px solid #000;
+}
+
+section .underTextBox {
+  font-family: 'Bungee', cursive;
+  display: flex;
+  justify-content: space-between;
+}
+
+main button {
+  color: white;
+  background-color: #4056A1;
+  border: none;
+}
