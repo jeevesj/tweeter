@@ -1,30 +1,30 @@
 nav {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   height: 120px;
-  width: 100vw;
+  width: 100%;
   padding-left: 1.5em;
   padding-right: 1.5em;
-  padding-bottom: .5em;
   background-color: #4056A1;
-  color: #FFFFFF;
+  color: #FFF;
   position: fixed;
 }
 
-nav span {
+.logo {
   font-family: 'Bungee', cursive;
   font-size: xx-large;
 }
 
-nav .tweetNow { 
+.tweetNow { 
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: auto;
+  justify-content: center;
+  /* margin-top: auto; */
 }
 
-nav .write {
+.write {
   font-family: 'Bungee', cursive;
   font-size: large;
   padding-right: 5px;
