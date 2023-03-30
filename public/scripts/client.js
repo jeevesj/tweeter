@@ -32,12 +32,12 @@ const data = [
 ];
 
 const renderTweets = function(tweets) {
-  const $tweetsContainer = $(".tweets");
-  $tweetsContainer.empty();
+
+  $(".tweets").empty();
   
   for (const tweet of tweets) {
-    const $tweet = createTweetElement(tweet);
-    $tweetsContainer.append($tweet);
+    const tweetElement = createTweetElement(tweet);
+    $(".tweets").append(tweetElement);
   }
 }
 
@@ -66,4 +66,6 @@ let $tweet =  $(`
 return $tweet;
 }
 
-renderTweets(data);
+$(document).ready(function() {
+  renderTweets(data);
+});
