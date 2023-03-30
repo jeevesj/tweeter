@@ -1,5 +1,3 @@
-const e = require("express");
-
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
@@ -32,7 +30,7 @@ const data = [
 ];
 
 const renderTweets = function(tweets) {
-
+  console.log("rednerTweets called");
   $(".tweets").empty();
   
   for (const tweet of tweets) {
@@ -42,20 +40,20 @@ const renderTweets = function(tweets) {
 }
 
 const createTweetElement = function(tweet) {
-let $tweet =  $(`
+  let $tweet =  $(`
   <article class="tweets__article">
-   <header class="tweets__header">
-     <div class="tweets__img__name">
-        <img src="${user.avatars}" alt="Profile-picture">
-        <name>${user.name}</name>
-     </div>
-        <span>${user.handle}</span>
-   </header>
-   <p class="content">${content.text}</p>
-   <div class="tweets__line"></div>
+    <header class="tweets__header">
+      <div class="tweets__img__name">
+        <img src="${tweet.user.avatars}" alt="Profile-picture">
+        <name>${tweet.user.name}</name>
+      </div>
+      <span>${tweet.user.handle}</span>
+    </header>
+    <p class="content">${tweet.content.text}</p>
+    <div class="tweets__line"></div>
     <footer class="tweets__footer">
-     <time datetime="${created_at}">${timeAgo}</time>
-     <span class="share__emojis">
+      <time datetime="${tweet.created_at}"></time>
+      <span class="share__emojis">
         <i class="fa-solid fa-flag"></i>
         <i class="fa-sharp fa-solid fa-retweet"></i>
         <i class="fa-solid fa-heart"></i>
@@ -64,7 +62,7 @@ let $tweet =  $(`
   </article>`);
 
 return $tweet;
-}
+};
 
 $(document).ready(function() {
   renderTweets(data);
