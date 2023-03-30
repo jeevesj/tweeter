@@ -1,8 +1,10 @@
+
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
 
 const data = [
   {
@@ -59,11 +61,26 @@ const createTweetElement = function(tweet) {
         <i class="fa-solid fa-heart"></i>
       </span>
     </footer>
-  </article>`);
+  </article>
+  <br>`
+  );
 
 return $tweet;
 };
 
 $(document).ready(function() {
   renderTweets(data);
+});
+
+
+$(document).ready(function() {
+  const $form = $('#tweetPost');
+
+  $form.on('submit', (event) => {
+    event.preventDefault();
+
+    console.log("forms been submitted");
+    const urlencoded = $form.serialize();
+    console.log(urlencoded);
+  });
 });
