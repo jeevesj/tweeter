@@ -3,8 +3,7 @@
  * Client-side JS logic goes here
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
+*/
 
 const data = [
   {
@@ -72,8 +71,27 @@ $(document).ready(function() {
   renderTweets(data);
 });
 
-
 $(document).ready(function() {
+  renderTweets(data);
+
+  function loadTweets() {
+    $.ajax({
+      url: 'http://localhost:8080/tweets',
+      method: 'GET',
+      dataType: 'json',
+      success: function(tweets) {
+        // Call renderTweets to display the fetched tweets on the page
+        renderTweets(tweets);
+      },
+      error: function(err) {
+        console.error('Error fetching tweets:', err);
+      }
+    });
+  }
+
+  // Call loadTweets to fetch and display the initial tweets
+  loadTweets();
+
   const $form = $('#tweetPost');
 
   $form.on('submit', (event) => {
@@ -82,5 +100,19 @@ $(document).ready(function() {
     console.log("forms been submitted");
     const urlencoded = $form.serialize();
     console.log(urlencoded);
+
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: urlencoded,
+      success: function(response) {
+        console.log('Form submitted successfully:', response);
+        // Refresh the list of tweets after submitting the form
+        loadTweets();
+      },
+      error: function(error) {
+        console.error('Error submitting form:', error);
+      }
+    });
   });
 });
