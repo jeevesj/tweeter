@@ -1,11 +1,12 @@
 nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   height: 120px;
   width: 100%;
   padding-left: 1.5em;
   padding-right: 1.5em;
+  padding-bottom: 0.5em;
   background-color: #4056A1;
   color: #FFF;
   position: fixed;
@@ -21,7 +22,6 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* margin-top: auto; */
 }
 
 .write {
