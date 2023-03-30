@@ -55,3 +55,15 @@
 .share__emojis {
  color: #4056A1;
 }
+
+.fa-flag:hover {
+  color: red;
+}
+
+.fa-retweet:hover {
+  color: red;
+}
+
+.fa-heart:hover {
+  color: red;
+}
