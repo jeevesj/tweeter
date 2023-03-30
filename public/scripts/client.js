@@ -44,6 +44,7 @@ return $tweet;
 };
 
 
+
 $(document).ready(function() {
   //renderTweets(data);
 
@@ -69,6 +70,19 @@ $(document).ready(function() {
 
   $form.on('submit', (event) => {
     event.preventDefault();
+
+    const textarea = $('#tweet-text');
+    const textValue = textarea.val();
+    
+    if (textValue === '' || textValue === null) {
+      alert("Tweet cannot be empty!");
+      return;
+    }
+
+    if(textValue.length > 140) {
+      alert("Tweets can only be 140 characters!");
+      return;
+    }
 
     console.log("forms been submitted");
     const urlencoded = $form.serialize();
