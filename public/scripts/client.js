@@ -17,6 +17,8 @@ const renderTweets = function(tweets) {
 
 const createTweetElement = function(tweet) {
   let time = timeago.format(tweet.created_at);
+  const $content = $('<p class="content"></p>').text(tweet.content.text);  
+  
   let $tweet =  $(`
   <article class="tweets__article">
     <header class="tweets__header">
@@ -26,7 +28,7 @@ const createTweetElement = function(tweet) {
       </div>
       <span>${tweet.user.handle}</span>
     </header>
-    <p class="content">${tweet.content.text}</p>
+
     <div class="tweets__line"></div>
     <footer class="tweets__footer">
       <time datetime="${time}">${time}</time>
@@ -39,7 +41,7 @@ const createTweetElement = function(tweet) {
   </article>
   <br>`
   );
-
+  $tweet.find('header').after($content);
 return $tweet;
 };
 
