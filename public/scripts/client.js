@@ -5,8 +5,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 */
 
-//const data = [];
-
 const renderTweets = function(tweets) {
   $(".tweets").empty();
   for (const tweet of tweets) {
@@ -67,25 +65,28 @@ $(document).ready(function() {
 
   // Call loadTweets to fetch and display the initial tweets
   loadTweets();
-
+  
   const $form = $('#tweetPost');
 
+  
   $form.on('submit', (event) => {
     event.preventDefault();
 
     const textarea = $('#tweet-text');
     const textValue = textarea.val();
+    $("#error-message").hide();
     
     if (textValue === '' || textValue === null) {
-      alert("Tweet cannot be empty!");
+      $("#error-message").text("Say something!").slideDown();
+      return;
+    }
+    
+    if (textValue.length > 140) {
+      $("#error-message").text("Looks like you're over the limit!").slideDown();
       return;
     }
 
-    if(textValue.length > 140) {
-      alert("Tweets can only be 140 characters!");
-      return;
-    }
-
+    $("#error-message").slideUp();
     console.log("forms been submitted");
     const urlencoded = $form.serialize();
     console.log(urlencoded);
@@ -98,6 +99,8 @@ $(document).ready(function() {
         console.log('Form submitted successfully:', response);
         // Refresh the list of tweets after submitting the form
         loadTweets();
+        textarea.val('');
+        textarea.trigger('input');
       },
       error: function(error) {
         console.error('Error submitting form:', error);
