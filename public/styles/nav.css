@@ -7,8 +7,7 @@ nav {
   padding-left: 1.5em;
   padding-right: 1.5em;
   padding-bottom: 0.5em;
-  background-color: #4056A1;
-  color: #FFF;
+  color: #4056A1;
   position: fixed;
 }
 
@@ -40,3 +39,9 @@ nav .fa-solid.fa-angles-down {
   margin-top: 0.5em;
 }
 
+@media (min-width: 1024px) {
+  nav {
+    background-color: #4056A1;
+    color: white; 
+  }
+}
