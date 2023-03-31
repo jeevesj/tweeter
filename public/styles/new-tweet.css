@@ -12,6 +12,14 @@
   width: 100%;
 }
 
+.makeRed {
+  color: red;
+}
+
+.makeBlack{
+  color: #545149;
+}
+
 textarea {
   width: 100%;
   resize: none;
