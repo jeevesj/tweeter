@@ -41,20 +41,30 @@ body {
   font-weight: lighter;
 }
 
+.rightside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 @media only screen and (min-width: 1024px) {
   
   .container {
-    width: 100%;
+    display: flex;
+    flex-direction: row;
   }
   
   .header__profile {
-    width: 33.3%;
-    float: left
+    width: 30%;
   }
 
   .rightside {
-    float: right;
-    width: 66.7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    
   }
 }

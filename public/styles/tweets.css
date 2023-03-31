@@ -1,7 +1,11 @@
 
 .tweets {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding-top: 1em;
-  width: 60%;
+  width: 80%;
+
 }
 
 .tweets__article {
