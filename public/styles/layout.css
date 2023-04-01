@@ -50,14 +50,19 @@ body {
 
 @media only screen and (min-width: 1024px) {
   
+  /* container has two parts, header profile & rightside */
+
   .container {
     display: flex;
     flex-direction: row;
   }
+
   
   .header__profile {
     width: 30%;
   }
+
+  /* added a section called rightside to pull the new tweets and tweets into a column */
 
   .rightside {
     display: flex;
@@ -65,6 +70,5 @@ body {
     justify-content: center;
     align-items: center;
     width: 80%;
-    
   }
 }
